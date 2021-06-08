@@ -2,9 +2,11 @@ import {
   Box,
   Grid,
   makeStyles,
+  Paper,
   TextField,
   Typography,
 } from "@material-ui/core";
+import BrandButton from "../BrandButton";
 import image2 from "../images/get-vaccinated.svg";
 const useStyles = makeStyles({
   root: {
@@ -12,7 +14,18 @@ const useStyles = makeStyles({
   },
   input: {
     padding: "10px 5px",
+    
+    display: "flex",
   },
+  paper: {
+    width: "500px",
+    minHeight: "250px",
+    display: "flex",
+    justifyContent: "center",
+    padding: "20px 10px",
+    borderRadius: "10px"
+  },
+  inputPaper: { width: "400px", height: "auto", display: "flex" },
   label: {},
 });
 function Login() {
@@ -21,6 +34,75 @@ function Login() {
     <div>
       <Grid container className={classes.root}>
         <Grid
+          item
+          xs={12}
+          md={12}
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Paper elevation={3} className={classes.paper}>
+            <Grid container spacing={0}>
+              <Grid
+                item
+                xs={12}
+                md={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <Typography variant="h1">
+                  Login
+                </Typography>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <TextField
+                  fullWidth
+                  required
+                  type="text"
+                  variant="filled"
+                  placeholder="Username"
+                  className={classes.input}
+                ></TextField>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <TextField
+                  fullWidth
+                  required
+                  type="text"
+                  variant="filled"
+                  placeholder="Password"
+                  className={classes.input}
+                ></TextField>
+              </Grid>
+              <Grid
+                item
+                xs={12}
+                md={12}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <BrandButton children="Login" color="primary" widthC="490px"></BrandButton>
+              </Grid>
+            </Grid>
+          </Paper>
+        </Grid>
+      </Grid>
+    </div>
+  );
+}
+export default Login;
+{
+  /*<Grid
           item
           xs={12}
           md={5}
@@ -32,8 +114,8 @@ function Login() {
           }}
         >
           <img src={image2} style={{ display: "flex" }}></img>
-        </Grid>
-        <Grid
+        </Grid> 
+  <Grid
           item
           xs={12}
           md={7}
@@ -48,8 +130,8 @@ function Login() {
             style={{
               display: "flex",
               flexDirection: "column",
-                          padding: "4vw",
-              width:"100vw",
+              padding: "4vw",
+              width: "100vw",
             }}
           >
             <Box style={{ display: "flex" }}>
@@ -88,8 +170,5 @@ function Login() {
             </Box>
           </Box>
         </Grid>
-      </Grid>
-    </div>
-  );
+          */
 }
-export default Login;

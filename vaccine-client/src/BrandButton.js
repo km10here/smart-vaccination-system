@@ -1,11 +1,12 @@
 import { Button } from "@material-ui/core";
 import PropTypes from 'prop-types';
-function BrandButton({color, children}){
+function BrandButton({color, children, widthC}){
     return (
-        <Button variant="contained" color={color}>{children}</Button>
+        <Button variant="contained" color={color} style={{width: widthC}}>{children}</Button>
     )
 }
 BrandButton.prototypes = {
-    color:PropTypes.string,
+    color: PropTypes.string,
+    widthC: PropTypes.string,
 }
 export default BrandButton;
